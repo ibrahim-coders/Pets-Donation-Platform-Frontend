@@ -1,148 +1,213 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import log from '../../assets/dog.webp';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { FiMenu, FiX } from 'react-icons/fi';
+import { IoMoon, IoMoonOutline } from 'react-icons/io5';
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
-  };
-  const [theme, setTheme] = useState('light');
-
-  // Toggle theme function
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
-  };
-
-  // Sync theme on page load
+  const [theme, setTheme] = useState('light-mode');
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
+    document.querySelector('body').className = theme;
   }, [theme]);
 
+  const changeTheme = () => {
+    if (theme === 'light-mode') {
+      setTheme('dark-mode');
+    } else {
+      setTheme('light-mode');
+    }
+  };
+  // Toggle dropdown
+  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
+
+  // Toggle mobile menu
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
   return (
-    <nav className="bg-gray-800 p-4 flex justify-between items-center">
-      <div className="flex items-center">
-        <img src={log} alt="Website Logo" className="h-10 rounded-full" />
+    <nav className=" shadow-md p-4 md:px-8 flex justify-between items-center sticky top-0 z-10 border-b">
+      {/* Logo */}
+      <div className="flex items-center w-16 h-16 bg-gray-800 rounded-full p-2">
+        <img src={log} alt="Logo" className="h-12 w-12 rounded-full" />
       </div>
 
-      <div className="flex justify-center text-center gap-2">
-        <ul className="flex space-x-4 text-white py-1.5">
-          <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive ? 'text-gray-400' : 'hover:text-gray-400'
-              }
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/pet-listing"
-              className={({ isActive }) =>
-                isActive ? 'text-gray-400' : 'hover:text-gray-400'
-              }
-            >
-              Pet Listing
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/donation-campaigns"
-              className={({ isActive }) =>
-                isActive ? 'text-gray-400' : 'hover:text-gray-400'
-              }
-            >
-              Donation Campaigns
-            </NavLink>
-          </li>
-
-          <label
-            htmlFor="AcceptConditions"
-            className="relative inline-block h-8 w-14 cursor-pointer rounded-full bg-gray-300 transition [-webkit-tap-highlight-color:_transparent] has-[:checked]:bg-green-500"
+      {/* Desktop Menu */}
+      <ul className="hidden md:flex space-x-6 text-lg">
+        <li>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive
+                ? 'bg-yellow-500 font-bold border-b-2 rounded-lg p-2 transition duration-300 ease-in-out'
+                : 'hover:text-orange-600'
+            }
           >
-            <input
-              type="checkbox"
-              id="AcceptConditions"
-              className="peer sr-only [&:checked_+_span_svg[data-checked-icon]]:block [&:checked_+_span_svg[data-unchecked-icon]]:hidden"
-              checked={theme === 'dark'}
-              onChange={toggleTheme}
-            />
-            <span className="absolute inset-y-0 start-0 z-10 m-1 inline-flex size-6 items-center justify-center rounded-full bg-white text-gray-400 transition-all peer-checked:start-6 peer-checked:text-green-600">
-              <svg
-                data-unchecked-icon
-                xmlns="http://www.w3.org/2000/svg"
-                className="size-4"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/pet-listing"
+            className={({ isActive }) =>
+              isActive
+                ? 'bg-yellow-500 font-bold border-b-2 rounded-lg p-2 transition duration-300 ease-in-out'
+                : 'hover:text-orange-600'
+            }
+          >
+            Pet Listing
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/donation-campaigns"
+            className={({ isActive }) =>
+              isActive
+                ? 'bg-yellow-500 font-bold border-b-2 rounded-lg p-2 transition duration-300 ease-in-out'
+                : 'hover:text-orange-600'
+            }
+          >
+            Donation Campaigns
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              isActive
+                ? 'bg-yellow-500 font-bold border-b-2 rounded-lg p-2 transition duration-300 ease-in-out'
+                : 'hover:text-orange-600'
+            }
+          >
+            Contact
+          </NavLink>
+        </li>
+      </ul>
 
-              <svg
-                data-checked-icon
-                xmlns="http://www.w3.org/2000/svg"
-                className="hidden size-4"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </span>
-          </label>
-        </ul>
-
-        {user && user?.email ? (
-          <div className="relative">
+      <div className="flex gap-4 items-center">
+        {/* Mobile Menu Toggle */}
+        <div className="flex gap-4">
+          {/* Theme Toggle */}
+          <div className="items-center" onClick={changeTheme}>
+            {theme === 'light-mode' ? (
+              <IoMoon className="text-2xl cursor-pointer " />
+            ) : (
+              <IoMoonOutline className="text-2xl cursor-pointer" />
+            )}
+          </div>
+          <button className="md:hidden text-2xl" onClick={toggleMenu}>
+            {menuOpen ? <FiX /> : <FiMenu />}
+          </button>
+        </div>
+        {/* User Dropdown */}
+        {user?.email ? (
+          <div className="relative hidden md:block">
             <img
               src={user?.photoURL}
-              referrerPolicy="no-referrer"
               alt="Profile"
-              className="h-10 w-10 rounded-full cursor-pointer ml-5"
+              className="h-10 w-10 rounded-full cursor-pointer"
               onClick={toggleDropdown}
             />
             {dropdownOpen && (
-              <div className="absolute right-0 mt-4 w-48 bg-white rounded-md shadow-lg py-2 z-10">
+              <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-md py-2">
                 <NavLink
                   to="/dashboard"
                   className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
                 >
                   Dashboard
                 </NavLink>
-
-                {user && user?.email ? (
-                  <NavLink
-                    onClick={logout}
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
-                  >
-                    Logout
-                  </NavLink>
-                ) : (
-                  ''
-                )}
+                <button
+                  onClick={logout}
+                  className="block px-4 py-2 text-gray-800 hover:bg-gray-200 w-full text-left"
+                >
+                  Logout
+                </button>
               </div>
             )}
           </div>
         ) : (
-          <NavLink to="/login" className="btn bg-green-500 text-white ml-4">
+          <NavLink
+            to="/login"
+            className="hidden md:inline-block bg-green-500 text-white px-4 py-2 rounded-md"
+          >
             Login
           </NavLink>
         )}
       </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="absolute top-16 left-0 w-full bg-white shadow-md md:hidden">
+          <ul className="flex flex-col items-center space-y-4 py-4">
+            <li>
+              <NavLink
+                to="/"
+                className="bg-yellow-500 font-bold border-b-2 rounded-lg p-2 transition duration-300 ease-in-out hover:text-orange-500 w-full"
+                onClick={toggleMenu}
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/pet-listing"
+                className="block py-2 text-gray-800 hover:text-black"
+                onClick={toggleMenu}
+              >
+                Pet Listing
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/donation-campaigns"
+                className="block py-2 text-gray-800 hover:text-black"
+                onClick={toggleMenu}
+              >
+                Donation Campaigns
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/contact"
+                className="block py-2 text-gray-800 hover:text-black"
+                onClick={toggleMenu}
+              >
+                Contact
+              </NavLink>
+            </li>
+          </ul>
+
+          <div className="flex flex-col items-center ">
+            {/* Mobile User Dropdown */}
+            {user?.email ? (
+              <div className="text-center">
+                <NavLink
+                  to="/dashboard"
+                  className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                >
+                  Dashboard
+                </NavLink>
+                <button
+                  onClick={logout}
+                  className="block w-full px-4 py-2 text-gray-800 hover:bg-gray-200"
+                >
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <NavLink
+                to="/login"
+                className="block text-center bg-green-500 text-white px-4 py-2 rounded-md mt-2 mb-6"
+              >
+                Login
+              </NavLink>
+            )}
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

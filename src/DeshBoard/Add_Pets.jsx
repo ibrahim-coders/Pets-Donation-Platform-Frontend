@@ -84,7 +84,7 @@ const Add_Pets = () => {
               onChange={handleImageUpload}
             />
             {photoURL && (
-              <p className="text-green-500 text-sm mt-2">
+              <p className="text-green-500 text-sm mt-2 hidden">
                 Image uploaded successfully!
               </p>
             )}

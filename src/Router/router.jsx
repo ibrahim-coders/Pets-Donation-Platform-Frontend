@@ -23,6 +23,7 @@ import AdminRoute from './AdminRoute';
 import EditDonation from '../DeshBoard/myDonation/EditDonation';
 import AllDonationTable from '../DeshBoard/myDonation/AllDonationTable';
 import ErrorPage from '../Components/ErrorPage';
+import Contact from '../Components/Contact';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: '/pet-listing',
         element: <Pet_Listing />,
+      },
+      {
+        path: '/contact',
+        element: <Contact />,
       },
       {
         path: '/pet-details/:details',
