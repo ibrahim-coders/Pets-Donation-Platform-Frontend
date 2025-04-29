@@ -75,7 +75,7 @@ const Donation = () => {
   return (
     <div className="container mx-auto p-4">
       <h2 className="text-2xl font-semibold mb-4">My Donations</h2>
-      <table className="min-w-full bg-white border border-gray-200">
+      <table className="min-w-full  border border-gray-200">
         <thead>
           <tr>
             <th className="px-4 py-2 border text-start">Pet Image</th>

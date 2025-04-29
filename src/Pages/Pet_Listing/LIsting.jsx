@@ -40,7 +40,7 @@ const LIsting = () => {
       {/* Display Pets */}
       <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-6">
         {pets && pets.length > 0 ? (
-          pets.slice(0, 4).map(pet => <All_pets key={pet._id} pet={pet} />)
+          pets.slice(0, 3).map(pet => <All_pets key={pet._id} pet={pet} />)
         ) : (
           <p className="text-center text-2xl text-red-400">No Data available</p>
         )}

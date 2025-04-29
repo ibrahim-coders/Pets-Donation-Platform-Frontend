@@ -78,7 +78,7 @@ const DonationForm = ({ amount, setAmount, closeModal, user, donation }) => {
       </label>
       <label className="block mb-4">
         Card Details:
-        <CardElement className="border rounded p-2 mt-1" />
+        <CardElement className="border rounded p-2 mt-1 bg-slate-100" />
       </label>
       <button
         type="submit"

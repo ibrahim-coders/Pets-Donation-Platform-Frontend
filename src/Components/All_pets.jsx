@@ -14,9 +14,9 @@ const All_pets = ({ pet }) => {
         />
       </div>
       <div className="p-4">
-        <h2 className="text-xl font-semibold text-gray-800">{petName}</h2>
-        <p className="text-gray-600 pt-1">Age: {age} years</p>
-        <p className="text-gray-600 flex pt-1">
+        <h2 className="text-xl font-semibold ">{petName}</h2>
+        <p className=" pt-1">Age: {age} years</p>
+        <p className=" flex pt-1">
           <IoLocationSharp className="text-2xl" /> {location}
         </p>
         <Link

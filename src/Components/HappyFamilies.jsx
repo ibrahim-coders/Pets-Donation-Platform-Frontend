@@ -18,10 +18,10 @@ const HappyFamilies = () => {
             <div className="w-full flex flex-col md:flex-row gap-6 items-center md:items-start my-10">
               {/* Text Content Section */}
               <div className="flex-1 space-y-4 px-4">
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+                <h2 className="text-2xl md:text-3xl font-bold ">
                   OWP packages designed for all ages and stages
                 </h2>
-                <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+                <p className=" text-base md:text-lg leading-relaxed">
                   We offer a range of OWPs designed for different needs, ages,
                   and lifestyles, from fuzzy puppies to senior statescats. Plus,
                   you always get a one-on-one consult with a Banfield vet when
@@ -49,10 +49,10 @@ const HappyFamilies = () => {
                 />
               </div>
               <div className="flex-1 space-y-4 px-4">
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+                <h2 className="text-2xl md:text-3xl font-bold ">
                   ntroducing Banfield virtual visits
                 </h2>
-                <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+                <p className=" text-base md:text-lg leading-relaxed">
                   Let’s face it — our pets don’t want to go to the vet. They’d
                   rather be lazy couch loafs. The good news is that our virtual
                   petcare services let you speak to a veterinary professional

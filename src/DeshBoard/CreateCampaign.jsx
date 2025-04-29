@@ -84,10 +84,7 @@ const CreateCampaign = () => {
         {/* Pet Picture */}
         <div className="flex flex-col md:flex-row gap-4">
           <div className="space-y-2 flex-1 w-full">
-            <label
-              htmlFor="petImage"
-              className="block text-sm font-medium text-gray-700"
-            >
+            <label htmlFor="petImage" className="block text-sm font-medium ">
               Pet Picture
             </label>
             <input
@@ -95,7 +92,7 @@ const CreateCampaign = () => {
               name="petImage"
               onChange={handleImageUpload}
               accept="image/*"
-              className="block mb-2 text-sm font-medium text-gray-900"
+              className="block mb-2 text-sm font-medium "
             />
             {imageUrl && (
               <img src={imageUrl} alt="Pet" className="mt-2" width="100" />
@@ -105,7 +102,7 @@ const CreateCampaign = () => {
           <div className="space-y-2 flex-1 w-full">
             <label
               htmlFor="shortDescription"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium "
             >
               Donation Name
             </label>
@@ -125,10 +122,7 @@ const CreateCampaign = () => {
         <div className="flex flex-col md:flex-row gap-4">
           {/* Maximum Donation Amount */}
           <div className="space-y-2 flex-1">
-            <label
-              htmlFor="maxDonation"
-              className="block text-sm font-medium text-gray-700"
-            >
+            <label htmlFor="maxDonation" className="block text-sm font-medium ">
               Maximum Donation Amount
             </label>
             <input
@@ -153,10 +147,7 @@ const CreateCampaign = () => {
           {/* Last Date of Donation */}
 
           <div className="space-y-2 flex-1">
-            <label
-              htmlFor="lastDate"
-              className="block text-sm font-medium text-gray-700"
-            >
+            <label htmlFor="lastDate" className="block text-sm font-medium ">
               Last Date of Donation
             </label>
             <DatePicker
@@ -174,7 +165,7 @@ const CreateCampaign = () => {
         <div className="space-y-2 flex-1">
           <label
             htmlFor="shortDescription"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium "
           >
             Short Description
           </label>
@@ -186,7 +177,7 @@ const CreateCampaign = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             required
-            className="block w-full text-sm text-gray-900 border border-gray-300 rounded-md p-2"
+            className="block w-full text-sm  border border-gray-300 rounded-md p-2"
           />
         </div>
 
@@ -194,7 +185,7 @@ const CreateCampaign = () => {
         <div className="space-y-2">
           <label
             htmlFor="longDescription"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium "
           >
             Long Description
           </label>

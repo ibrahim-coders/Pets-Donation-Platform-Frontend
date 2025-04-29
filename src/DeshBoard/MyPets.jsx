@@ -94,13 +94,13 @@ const MyPets = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="container mx-auto">
       <Helmet>
         <title>Animals | My Pets</title>
       </Helmet>
       <h1 className="text-2xl font-bold mb-4">My Pets</h1>
-      <div className="overflow-x-auto">
-        <table className="table">
+      <div className="container mx-auto ">
+        <table className="">
           <thead>
             <tr>
               <th onClick={() => requestSort('index')}>Serial </th>

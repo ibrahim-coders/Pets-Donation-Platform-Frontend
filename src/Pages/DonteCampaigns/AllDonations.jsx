@@ -13,16 +13,14 @@ const AllDonations = ({ donation }) => {
       <div className="w-full rounded overflow-hidden shadow-lg">
         <img className="w-full h-48 object-cover" src={petImage} alt={name} />
         <div className="p-4">
-          <p className="text-xl font-semibold text-gray-500 pl-2">{name}</p>
-          <h2 className="text-xl font-semibold text-gray-500 pl-2">
+          <p className="text-xl font-semibold  pl-2">{name}</p>
+          <h2 className="text-xl font-semibold  pl-2">
             Last Date:
-            <span className="text-gray-700 px-2 text-sm">
-              {formattedLastDate}
-            </span>
+            <span className=" px-2 text-sm">{formattedLastDate}</span>
           </h2>
-          <p className="text-xl font-semibold text-gray-500 pl-2">
+          <p className="text-xl font-semibold  pl-2">
             Max-Donation:
-            <span className="text-gray-700 px-2 text-sm">{maxDonation}</span>
+            <span className=" px-2 text-sm">{maxDonation}</span>
           </p>
 
           <Link

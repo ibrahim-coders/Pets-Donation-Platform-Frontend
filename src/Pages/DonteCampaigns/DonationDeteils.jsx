@@ -68,12 +68,10 @@ const DonationDeteils = () => {
 
       <div className="w-full">
         {' '}
-        <h2 className="text-2xl font-bold text-gray-800 pt-2">
-          {donation?.name}
-        </h2>
+        <h2 className="text-2xl font-bold  pt-2">{donation?.name}</h2>
         <div className="mt-4">
-          <h3 className="font-semibold text-gray-800">Details:</h3>
-          <p className="text-gray-600">
+          <h3 className="font-semibold ">Details:</h3>
+          <p className="">
             {' '}
             <strong>Max-Donation:</strong> {donation?.maxDonation}
           </p>
@@ -82,10 +80,8 @@ const DonationDeteils = () => {
             {new Date(donation?.lastDate).toLocaleDateString()}
           </p>
         </div>
-        <p className="pt-1 text-lg text-gray-600">
-          {donation?.shortDescription}
-        </p>
-        <p className="text-lg text-gray-600 font-bold">Description</p>
+        <p className="pt-1 text-lg ">{donation?.shortDescription}</p>
+        <p className="text-lg  font-bold">Description</p>
         <div
           className="m-0 p-0"
           dangerouslySetInnerHTML={{ __html: donation?.longDescription }}
@@ -100,8 +96,8 @@ const DonationDeteils = () => {
 
       {/* Modal for Donation */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-          <div className="bg-white p-6 rounded-md w-96">
+        <div className="fixed inset-0  bg-opacity-50 flex justify-center items-center">
+          <div className="bg-slate-500 p-6 rounded-md w-96">
             <h3 className="text-xl font-bold mb-4">
               Donate to {donation?.name}
             </h3>

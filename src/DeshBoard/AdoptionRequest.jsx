@@ -55,7 +55,7 @@ const AdoptionRequest = () => {
   }
 
   return (
-    <div className="container mx-auto p-6">
+    <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Adoption Requests</h1>
       {adoptionRequests.length > 0 ? (
         <table className="table-auto w-full border-collapse border border-gray-200">

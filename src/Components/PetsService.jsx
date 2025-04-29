@@ -15,10 +15,8 @@ const PetsService = () => {
   return (
     <section>
       <div className="py-4 my-10">
-        <p className="text-center text-sm font-bold text-gray-800">
-          PETS SERVICES
-        </p>
-        <h2 className="text-4xl font-bold text-center text-gray-800 py-3">
+        <p className="text-center text-sm font-bold ">PETS SERVICES</p>
+        <h2 className="text-4xl font-bold text-center  py-3">
           Meet Our Happy Families
         </h2>
       </div>
@@ -27,17 +25,15 @@ const PetsService = () => {
         data-aos="fade-up"
       >
         {/* cards 1 */}
-        <article className="overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm">
+        <article className="overflow-hidden rounded-lg border border-gray-10 shadow-sm">
           <img alt="" src={img2} className="h-56 w-full object-cover" />
 
           <div className="p-4 sm:p-6">
             <a href="#">
-              <h3 className="text-lg font-medium text-gray-900">
-                Vet Homeopath
-              </h3>
+              <h3 className="text-lg font-medium ">Vet Homeopath</h3>
             </a>
 
-            <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+            <p className="mt-2 line-clamp-3 text-sm/relaxed ">
               They can increase opportunities to exercise and socialize.
             </p>
 
@@ -56,17 +52,15 @@ const PetsService = () => {
           </div>
         </article>
         {/* cards 2 */}
-        <article className="overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm">
+        <article className="overflow-hidden rounded-lg border border-gray-100  shadow-sm">
           <img alt="" src={img3} className="h-56 w-full object-cover" />
 
           <div className="p-4 sm:p-6">
             <a href="#">
-              <h3 className="text-lg font-medium text-gray-900">
-                Feathered pets
-              </h3>
+              <h3 className="text-lg font-medium ">Feathered pets</h3>
             </a>
 
-            <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+            <p className="mt-2 line-clamp-3 text-sm/relaxed">
               They give you a reason to get outside, get some fresh air.
             </p>
 
@@ -85,17 +79,15 @@ const PetsService = () => {
           </div>
         </article>
         {/* cards 3 */}
-        <article className="overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm">
+        <article className="overflow-hidden rounded-lg border border-gray-100  shadow-sm">
           <img alt="" src={img} className="h-56 w-full object-cover" />
 
           <div className="p-4 sm:p-6">
             <a href="#">
-              <h3 className="text-lg font-medium text-gray-900">
-                Veterinarian
-              </h3>
+              <h3 className="text-lg font-medium ">Veterinarian</h3>
             </a>
 
-            <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+            <p className="mt-2 line-clamp-3 text-sm/relaxed">
               Help manage loneliness by giving us companionship.
             </p>
 

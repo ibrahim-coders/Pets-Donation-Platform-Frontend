@@ -73,14 +73,12 @@ const Add_Pets = () => {
         <div className="flex flex-col md:flex-row gap-4">
           {/* Pet Image */}
           <div className="flex-1">
-            <label className="block mb-2 text-sm font-medium text-gray-900">
-              Pet Image
-            </label>
+            <label className="block mb-2 text-sm font-medium ">Pet Image</label>
             <input
               type="file"
               accept="image/*"
               name="image"
-              className="block w-full text-sm text-gray-900 border border-gray-300 rounded-md"
+              className="block w-full text-sm border border-gray-300 rounded-md"
               onChange={handleImageUpload}
             />
             {photoURL && (
@@ -92,13 +90,11 @@ const Add_Pets = () => {
 
           {/* Pet Name */}
           <div className="flex-1">
-            <label className="block mb-2 text-sm font-medium text-gray-900">
-              Pet Name
-            </label>
+            <label className="block mb-2 text-sm font-medium ">Pet Name</label>
             <input
               type="text"
               {...register('petName', { required: 'Pet name is required' })}
-              className="block w-full text-sm text-gray-900 border border-gray-300 rounded-md p-2"
+              className="block w-full text-sm  border border-gray-300 rounded-md p-2"
             />
             {errors.petName && (
               <p className="text-red-500">{errors.petName.message}</p>
@@ -109,20 +105,18 @@ const Add_Pets = () => {
         <div className="flex flex-col md:flex-row gap-4">
           {/* Pet Age */}
           <div className="flex-1">
-            <label className="block mb-2 text-sm font-medium text-gray-900">
-              Pet Age
-            </label>
+            <label className="block mb-2 text-sm font-medium ">Pet Age</label>
             <input
               type="number"
               {...register('age', { required: 'Pet age is required' })}
-              className="block w-full text-sm text-gray-900 border border-gray-300 rounded-md p-2"
+              className="block w-full text-sm  border border-gray-300 rounded-md p-2"
             />
             {errors.age && <p className="text-red-500">{errors.age.message}</p>}
           </div>
 
           {/* Pet Category */}
           <div className="flex-1">
-            <label className="block mb-2 text-sm font-medium text-gray-900">
+            <label className="block mb-2 text-sm font-medium ">
               Pet Category
             </label>
             <Controller
@@ -148,7 +142,7 @@ const Add_Pets = () => {
         <div className="flex flex-col md:flex-row gap-4">
           {/* Pet Location */}
           <div className="flex-1">
-            <label className="block mb-2 text-sm font-medium text-gray-900">
+            <label className="block mb-2 text-sm font-medium ">
               Pet Location
             </label>
             <input
@@ -156,7 +150,7 @@ const Add_Pets = () => {
               {...register('location', {
                 required: 'Pet location is required',
               })}
-              className="block w-full text-sm text-gray-900 border border-gray-300 rounded-md p-2"
+              className="block w-full text-sm  border border-gray-300 rounded-md p-2"
             />
             {errors.location && (
               <p className="text-red-500">{errors.location.message}</p>
@@ -165,7 +159,7 @@ const Add_Pets = () => {
 
           {/* Short Description */}
           <div className="flex-1">
-            <label className="block mb-2 text-sm font-medium text-gray-900">
+            <label className="block mb-2 text-sm font-medium ">
               Short Description
             </label>
             <input
@@ -173,7 +167,7 @@ const Add_Pets = () => {
               {...register('shortDescription', {
                 required: 'Short description is required',
               })}
-              className="block w-full text-sm text-gray-900 border border-gray-300 rounded-md p-2"
+              className="block w-full text-sm  border  rounded-md p-2"
             />
             {errors.shortDescription && (
               <p className="text-red-500">{errors.shortDescription.message}</p>
@@ -183,7 +177,7 @@ const Add_Pets = () => {
 
         {/* Long Description */}
         <div>
-          <label className="block mb-2 text-sm font-medium text-gray-900">
+          <label className="block mb-2 text-sm font-medium ">
             Long Description
           </label>
           <ReactQuill
@@ -197,7 +191,7 @@ const Add_Pets = () => {
         <div className="text-center">
           <button
             type="submit"
-            className="bg-blue-500 text-white p-3 rounded-lg w-full md:w-1/4"
+            className="bg-blue-500  p-3 rounded-lg w-full md:w-1/4"
           >
             Submit
           </button>

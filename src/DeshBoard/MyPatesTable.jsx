@@ -1,4 +1,3 @@
-import React from 'react';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { FiEdit } from 'react-icons/fi';
 import { MdDelete } from 'react-icons/md';
@@ -21,11 +20,15 @@ const MyPatesTable = ({
       customUI: ({ onClose }) => {
         return (
           <div className="custom-ui bg-white p-4 rounded shadow-md w-96 text-center">
-            <h1 className="text-xl pb-1 font-bold">Are you sure?</h1>
-            <p className="text-sm pb-1">You want to delete this pet?</p>
+            <h1 className="text-xl pb-1 font-bold text-yellow-500">
+              Are you sure?
+            </h1>
+            <p className="text-sm pb-1 text-orange-500">
+              You want to delete this pet?
+            </p>
             <div className="mt-3 flex justify-center gap-2 w-full">
               <button
-                className=" bg-green-700 px-4 text-white rounded w-full py-4"
+                className=" bg-green-700 px-4  rounded w-full py-4"
                 onClick={onClose}
               >
                 No
@@ -69,15 +72,15 @@ const MyPatesTable = ({
       <td>{category.label}</td>{' '}
       {/* Ensure category is a string or valid React element */}
       <td className="text-red-600">{status ? 'Adopted' : 'Available'}</td>
-      <td className="flex gap-4">
+      <td className="flex flex-wrap gap-2">
         <Link
           to={`/dashboard/pets_update/${_id}`}
-          className="bg-yellow-500 text-white p-2 rounded-full hover:bg-yellow-600"
+          className="bg-yellow-500  p-2 rounded-full hover:bg-yellow-600"
         >
           <FiEdit size={18} />
         </Link>
         <button
-          className={`bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 ${
+          className={`bg-blue-500  p-2 rounded-full hover:bg-blue-600 ${
             status ? 'cursor-not-allowed opacity-50' : ''
           }`}
           onClick={() => handleAdopt(_id)}
@@ -85,7 +88,7 @@ const MyPatesTable = ({
           <AiOutlineHeart size={18} />
         </button>
         <button
-          className="bg-red-500 text-white p-2 rounded-full hover:bg-red-600"
+          className="bg-red-500  p-2 rounded-full hover:bg-red-600"
           onClick={showDeleteConfirmation}
           title="Delete"
         >

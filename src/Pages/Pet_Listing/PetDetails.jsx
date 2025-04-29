@@ -65,7 +65,7 @@ const PetDetails = () => {
   if (!pets._id) return <Loaders />;
 
   return (
-    <div className="mx-auto flex flex-col lg:flex-row justify-between w-full gap-12 my-10">
+    <div className="mx-auto flex flex-col lg:flex-row justify-between w-full gap-12 my-10 px-10">
       <Helmet>
         <title>Animals | PetDetails </title>
       </Helmet>
@@ -77,31 +77,29 @@ const PetDetails = () => {
         />
       </div>
       <div className="w-full">
-        <h2 className="text-2xl font-bold text-gray-800 pt-2">
-          {pets.petName}
-        </h2>
+        <h2 className="text-2xl font-bold pt-2">{pets.petName}</h2>
         <div className="mt-4">
-          <h3 className="font-semibold text-gray-800">Details:</h3>
-          <p className="text-gray-600">Location: {pets.location}</p>
-          <p className="text-gray-600">Age: {pets.age}</p>
+          <h3 className="font-semibold ">Details:</h3>
+          <p className="t">Location: {pets.location}</p>
+          <p className="">Age: {pets.age}</p>
         </div>
-        <p className="pt-1 text-lg text-gray-600">{pets.shortDescription}</p>
-        <p className="text-lg text-gray-600 font-bold">Description</p>
+        <p className="pt-1 text-lg ">{pets.shortDescription}</p>
+        <p className="text-lg  font-bold">Description</p>
         <div
           className="m-0 p-0"
           dangerouslySetInnerHTML={{ __html: pets.longDescription }}
         ></div>
         <button
           onClick={() => setShowModal(true)}
-          className="bg-gray-700 text-white text-sm py-3 px-4 rounded-md inline-block hover:bg-gray-600 transition duration-300 mt-4"
+          className="bg-orange-600 text-white text-sm py-3 px-4 rounded-md inline-block hover:bg-gray-600 transition duration-300 mt-4"
         >
           Adopt
         </button>
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
-          <div className="bg-white rounded-lg shadow-lg p-6 w-96">
+        <div className="fixed inset-0 flex items-center justify-center  bg-opacity-50 mt-20">
+          <div className="bg-sky-500 rounded-lg shadow-lg p-6 w-96">
             <h2 className="text-xl font-bold mb-4">{`Adopt ${pets.petName}`}</h2>
             <form onSubmit={handleSubmit}>
               <input
@@ -146,7 +144,7 @@ const PetDetails = () => {
               <button
                 type="button"
                 onClick={() => setShowModal(false)}
-                className="ml-4 text-gray-600"
+                className="ml-4 "
               >
                 Cancel
               </button>
